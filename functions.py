@@ -18,7 +18,14 @@ def check_the_input(user_input):
      return value
 
 def password_generator(letters, symbols, numbers):
-
+    """
+    Basing on the user choices generates the random password which length = sum of the respective values inputed
+    by the user.
+    :param letters: takes the number of the letters from user input
+    :param symbols: takes the number of the symbols from user input
+    :param numbers: takes the number of the numbers from user input
+    :return: randomly generated password
+    """
     password_list = []
 
     for char in range(1, letters + 1):
@@ -37,3 +44,17 @@ def password_generator(letters, symbols, numbers):
         password += char
 
     print(f"Your password is: {password}")
+
+def another_pass():
+    """
+    Checks if the user would like to generate another password.
+    :return: user's choice
+    """
+    user_choice = input('Would You like to generate another password? Type "Yes" or "No".')
+    if user_choice.lower() == 'yes':
+        return True
+    elif user_choice.lower() == 'no':
+        return False
+    else:
+        print('Incorrect answer. Please try again')
+        another_pass()
