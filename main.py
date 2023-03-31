@@ -8,35 +8,13 @@ import random
 from letters import letters as let
 from numbers import numbers as num
 from symbols import symbols as sym
+from Input_check import check_the_input as checker
 
 print("Welcome to the PyPassword Generator!")
 
-while True:
-  try:
-    nr_letters = int(input("How many letters would you like to have in your password?\n"))
-  except ValueError:
-    print('You typed a non-numerical value. Please try again!')
-    continue
-  else:
-    break
-
-while True:
-  try:
-    nr_symbols = int(input(f"How many symbols would you like to have in your password?\n"))
-  except ValueError:
-    print('You typed a non-numerical value. Please try again!')
-    continue
-  else:
-    break
-
-while True:
-  try:
-    nr_numbers = int(input(f"How many numbers would you like to have in your password?\n"))
-  except ValueError:
-    print('You typed a non-numerical value. Please try again!')
-    continue
-  else:
-    break
+nr_letters = checker("How many letters would you like to have in your password?\n")
+nr_symbols = checker(f"How many symbols would you like to have in your password?\n")
+nr_numbers = checker(f"How many numbers would you like to have in your password?\n")
 
 password_list = []
 
